@@ -1,0 +1,244 @@
+13) FACTORIAL OF A NUMBER:
+#include <stdio.h>
+int main(){
+  int i,f=1,num;
+
+  printf("Input the number : ");
+  scanf("%d",&num);
+
+  for(i=1;i<=num;i++)
+      f=f*i;
+
+  printf("The Factorial of %d is: %d\n",num,f);
+  return 0;
+}
+
+
+14) FINDING GIVEN NUMBER IS ARMSTRONG OR NOT:
+#include <stdio.h>
+int main() {
+    int num, originalNum, remainder, result = 0;
+    printf("Enter a three-digit integer: ");
+    scanf("%d", &num);
+    originalNum = num;
+
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += remainder * remainder * remainder;
+       originalNum /= 10;
+    }
+
+    if (result == num)
+        printf("%d is an Armstrong number.", num);
+    else
+        printf("%d is not an Armstrong number.", num);
+
+    return 0;
+}
+
+15) SUMMING UP ANY N NUMBERS AND FINDING AVERAGE:
+#include<stdio.h>
+int main()
+{
+  int i,n,Sum=0,numbers;
+  float Average;
+
+  printf("\nPlease Enter How many Number you want?\n");
+  scanf("%d",&n);
+
+  printf("\nPlease Enter the elements one by one\n");
+  for(i=0;i<n;++i)
+   {
+     scanf("%d",&numbers);
+     Sum = Sum +numbers;
+   }
+
+  Average = Sum/n;
+
+  printf("\nSum of the %d Numbers = %d",n, Sum);
+  printf("\nAverage of the %d Numbers = %.2f",n, Average);
+
+  return 0;
+}
+
+
+16)PRINTING DIGITS OF AN INTEGER NUMBER:
+#include <stdio.h>
+int main() {   
+    int number;
+   
+    printf("Enter an integer: ");  
+    
+    // reads and stores input
+    scanf("%d", &number);
+
+    // displays output
+    printf("You entered: %d", number);
+    
+    return 0;
+}
+
+17)SUMMING UP THE DIGITS OF AN INTEGER NUMBER:
+#include<stdio.h>  
+ int main()    
+{    
+int n,sum=0,m;    
+printf("Enter a number:");    
+scanf("%d",&n);    
+while(n>0)    
+{    
+m=n%10;    
+sum=sum+m;    
+n=n/10;    
+}    
+printf("Sum is=%d",sum);    
+return 0;  
+}
+
+18)REVERSING THE DIGITS OF AN INTEGER NUMBER:
+#include <stdio.h>
+
+int main() {
+
+  int n, reverse = 0, remainder;
+
+  printf("Enter an integer: ");
+  scanf("%d", &n);
+
+  while (n != 0) {
+    remainder = n % 10;
+    reverse = reverse * 10 + remainder;
+    n /= 10;
+  }
+
+  printf("Reversed number = %d", reverse);
+
+  return 0;
+}
+
+19)FINDING THE GIVEN INTEGER IS POSITIVE OR NEGATIVE:
+#include <stdio.h>
+
+int main() {
+
+    double num;
+    printf("Enter a number: ");
+    scanf("%lf", &num);
+    if (num <= 0.0) {
+        if (num == 0.0)
+            printf("You entered 0.");
+        else
+            printf("You entered a negative number.");
+    } 
+    else
+        printf("You entered a positive number.");
+
+    return 0;
+}
+
+20)SWAPPING TWO NUMBERS WITH A TEMPORARY VARIABLE:
+#include<stdio.h>
+int main() {
+  double first, second, temp;
+  printf("Enter first number: ");
+  scanf("%lf", &first);
+  printf("Enter second number: ");
+  scanf("%lf", &second);
+  temp = first;
+  first = second;
+  second = temp;
+  printf("\nAfter swapping, first number = %.2lf\n", first);
+  printf("After swapping, second number = %.2lf", second);
+  return 0;
+}
+
+21) PROGRAM TO CONVERT DECIMAL TO HEXADECIMAL:
+#include<stdio.h>
+int main() {
+	long int decimalNumber,remainder,quotient;
+	int i=1,j,temp;
+	char hexadecimalNumber[100];
+	printf("Enter any decimal number: ");
+	scanf("%ld",&decimalNumber);
+	quotient = decimalNumber;
+	while(quotient!=0) {
+		temp = quotient % 16;
+		if( temp < 10)
+		           temp =temp + 48; else
+		         temp = temp + 55;
+		hexadecimalNumber[i++]= temp;
+		quotient = quotient / 16;
+	}
+	printf("Equivalent hexadecimal value of decimal number %d: ",decimalNumber);
+	for (j = i -1 ;j> 0;j--)
+	      printf("%c",hexadecimalNumber[j]);
+	return 0;
+}
+
+22) PROGREAM TO CONVERT HEXADECIMAL TO DECIMAL:
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+int main()
+{
+ char hex[17];
+ long long decimal, place;
+ int i = 0, val, len;
+ decimal = 0;
+ place = 1;
+ printf("Enter any hexadecimal number: ");
+ gets(hex);
+ len = strlen(hex);
+ len--;
+ for(i=0; hex[i]!='\0'; i++)
+ {
+ if(hex[i]>='0' && hex[i]<='9')
+ {
+ val = hex[i] - 48;
+ }
+ else if(hex[i]>='a' && hex[i]<='f')
+ {
+ val = hex[i] - 97 + 10;
+ }
+ else if(hex[i]>='A' && hex[i]<='F')
+ {
+ val = hex[i] - 65 + 10;
+ }
+ decimal += val * pow(16, len);
+ len--;
+ }
+ printf("Hexadecimal number = %s\n", hex);
+ printf("Decimal number = %lld", decimal);
+ return 0;
+}
+
+
+23) PROGRAM TO CONVERT DECIMAL TO OCTAL:
+#include <stdio.h>
+int main() 
+{
+ int number;
+ printf("\n Please Enter the Number You want to Convert : ");
+ scanf("%d", &number);
+ printf("\n Octal Number of a Given Number = %o", number);
+ return 0;
+}
+
+
+24) PROGRAM TO CONVERT OCTAL TO DECIMAL:
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+ int octal, decimal = 0;
+ int i = 0;
+ printf("Enter the Octal Number = ");
+ scanf("%d",&octal);
+ while(octal != 0)
+ {
+ decimal = decimal + (octal % 10) * pow(8, i++);
+ octal = octal / 10;
+ }
+ printf("The Decimal Value = %d\n", decimal); 
+ return 0;
+}
