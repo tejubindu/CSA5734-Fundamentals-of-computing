@@ -1,0 +1,246 @@
+26) TO READ A NUMBER AND FIND ITS SQUARE:
+#include<stdio.h>
+int main()
+{
+	int n;
+	printf("enter a number:");
+	scanf("%d",&n);
+	printf("The given number is:%d\n",n);
+	printf("The square of the given number is:%d",n*n);
+	return 0;
+}
+
+27)TO FIND BIGGEST OF THREE NUMBERS:
+#include <stdio.h>
+
+int main() {
+  double n1, n2, n3;
+  printf("Enter three different numbers: ");
+  scanf("%lf %lf %lf", &n1, &n2, &n3);
+  if (n1 >= n2 && n1 >= n3)
+    printf("%.2f is the largest number.", n1);
+  if (n2 >= n1 && n2 >= n3)
+    printf("%.2f is the largest number.", n2);
+  if (n3 >= n1 && n3 >= n2)
+    printf("%.2f is the largest number.", n3);
+
+  return 0;
+}
+
+28)TO FIND LEAP YEAR:
+#include <stdio.h>
+int main() {
+   int year;
+   printf("Enter a year: ");
+   scanf("%d", &year);
+   if (year % 400 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   else if (year % 100 == 0) {
+      printf("%d is not a leap year.", year);
+   }
+   else if (year % 4 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   else {
+      printf("%d is not a leap year.", year);
+   }
+}
+
+29)TO PREPARE MARK LIST USING ELIF STATEMENT:
+#include <stdio.h>
+int main(void){
+int num;
+printf("Enter your mark ");
+scanf("%d",&num);
+printf(" You entered %d", num); 
+
+	if(num >= 80){
+	printf(" You got A grade"); 
+		}
+	else if ( num >=60){ 
+		printf(" You got B grade");
+		}
+	else if ( num >=40){
+		printf(" You got C grade");
+		}
+	else if ( num < 40){
+		printf(" You Failed in this exam");
+		}
+return 0;
+}
+
+30)TP PERFORM ARITHEMATIC OPERATIONS ON TWO NUMBERS:
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    int op;
+    printf(" 1.Addition\n 2.Subtraction\n 3.Multiplication\n 4.Division\n");
+    printf("Enter the values of a & b: ");
+    scanf("%d %d",&a,&b);
+    printf("Enter your Choice : ");
+    scanf("%d",&op);
+    switch(op)
+    {
+    case 1	:
+        printf("Sum of %d and %d is : %d",a,b,a+b);
+        break;
+    case 2	:
+        printf("Difference of %d and %d is : %d",a,b,a-b);
+        break;
+    case 3	:
+        printf("Multiplication of %d and %d is : %d",a,b,a*b);
+        break;
+    case 4	:
+        printf("Division of Two Numbers is %d : ",a/b);
+        break;
+    default	:
+        printf(" Enter Your Correct Choice.");
+        break;
+    }
+    return 0;
+}
+
+31)TO FIND AREA OF DIFFERENT SHAPES:
+#include<stdio.h>
+#include<math.h>
+main(){
+   int choice;
+   printf("Enter\n1 to find area of Triangle\n2 for finding area of Square\n3 for finding area of Circle\n4 for finding area of Rectangle\n5 for Parallelogram\n");
+   scanf("%d",&choice);
+   switch(choice) {
+      case 1: {
+         int a,b,c;
+         float s,area;
+         printf("Enter sides of triangle\n");
+         scanf("%d%d %d",&a,&b,&c);
+         s=(float)(a+b+c)/2;
+         area=(float)(sqrt(s*(s-a)*(s-b)*(s-c)));
+         printf("Area of Triangle is %f\n",area);
+         break;
+      }
+      case 2: {
+      	float side,area;
+         printf("Enter Sides of Square\n");
+         scanf("%f",&side);
+         area=(float)side*side;
+         printf("Area of Square is %f\n",area);
+         break;
+      }
+      case 3: {
+         float radius,area;
+         printf("Enter Radius of Circle\n");
+         scanf("%f",&radius);
+         area=(float)3.14159*radius*radius;
+         printf("Area of Circle %f\n",area);
+         break;
+      }
+      case 4: {
+         float len,breadth,area;
+         printf("Enter Length and Breadth of Rectangle\n");
+         scanf("%f %f",&len,&breadth);
+         area=(float)len*breadth;
+         printf("Area of Rectangle is %f\n",area);
+         break;
+      }
+      case 5: {
+      	float base,height,area;
+         printf("Enter base and height of Parallelogram\n");
+         scanf("%f %f",&base,&height);
+         area=(float)base*height;
+         printf("Enter area of Parallelogram is %f\n",area);
+         break;
+      }
+      default: {
+         printf("Invalid Choice\n");
+         break;
+      }
+   }
+}
+
+32)TO CHECK THE NUMBER IS PALINDROME OR NOT:
+#include<stdio.h>  
+int main()    
+{    
+int n,r,sum=0,temp;    
+printf("enter the number=");    
+scanf("%d",&n);    
+temp=n;    
+while(n>0)    
+{    
+r=n%10;    
+sum=(sum*10)+r;    
+n=n/10;    
+}    
+if(temp==sum)    
+printf("given number is a palindrome number ");    
+else    
+printf("given number is not a palindrome number");   
+return 0;  
+}   
+
+33)TO SOLVE QUADRATIC EQUATIONS:
+#include <math.h>
+#include <stdio.h>
+int main() {
+    double a, b, c, discriminant, root1, root2, realPart, imagPart;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    discriminant = b * b - 4 * a * c;
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
+    }
+    else if (discriminant == 0) {
+        root1 = root2 = -b / (2 * a);
+        printf("root1 = root2 = %.2lf;", root1);
+    }
+    else {
+        realPart = -b / (2 * a);
+        imagPart = sqrt(-discriminant) / (2 * a);
+        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+    }
+
+    return 0;
+} 
+
+34)DECIMAL TO BINARY CONVERSION:
+#include<stdlib.h>
+#include<stdio.h>  
+int main(){  
+int a[10],n,i;    
+system ("cls");  
+printf("Enter the number to convert: ");    
+scanf("%d",&n);    
+for(i=0;n>0;i++)    
+{    
+a[i]=n%2;    
+n=n/2;    
+}    
+printf("\nBinary of Given Number is=");    
+for(i=i-1;i>=0;i--)    
+{    
+printf("%d",a[i]);    
+}    
+return 0;  
+}  
+
+35)FACTORIAL USING RECURSION:
+#include<stdio.h>
+long int multiplyNumbers(int n);
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
+    return 0;
+}
+
+long int multiplyNumbers(int n) {
+    if (n>=1)
+        return n*multiplyNumbers(n-1);
+    else
+        return 1;
+}
